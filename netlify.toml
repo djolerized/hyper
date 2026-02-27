@@ -1,0 +1,168 @@
+# WordPress blog reverse proxy (status 200 = rewrite, URL stays on our domain)
+[[redirects]]
+  from = "/blog"
+  to = "https://hypefy-landing-wp-prod-gncqf8hkg2e4bmbc.northeurope-01.azurewebsites.net/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/blog/*"
+  to = "https://hypefy-landing-wp-prod-gncqf8hkg2e4bmbc.northeurope-01.azurewebsites.net/:splat"
+  status = 200
+  force = true
+
+
+
+# HubSpot reverse proxy - avoids ad blockers
+[[redirects]]
+  from = "/hs/script/*"
+  to = "https://js-eu1.hs-scripts.com/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/hs/analytics/*"
+  to = "https://js-eu1.hs-analytics.net/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/hs/banner/*"
+  to = "https://js-eu1.hs-banner.com/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/hs/forms/*"
+  to = "https://forms-eu1.hsforms.com/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/hs/collected/*"
+  to = "https://forms-eu1.hscollectedforms.net/:splat"
+  status = 200
+  force = true
+
+# Legacy URL redirects (301 permanent)
+[[redirects]]
+  from = "/franchise340408"
+  to = "/franchise"
+  status = 301
+
+[[redirects]]
+  from = "/roi-calculator270278"
+  to = "/tools/roi-calculator"
+  status = 301
+
+[[redirects]]
+  from = "/roi-calculator"
+  to = "/tools/roi-calculator"
+  status = 301
+
+[[redirects]]
+  from = "/apply-new"
+  to = "/book-demo"
+  status = 301
+
+[[redirects]]
+  from = "/schedule-new"
+  to = "/book-demo"
+  status = 301
+
+[[redirects]]
+  from = "/thank-you-new"
+  to = "/book-demo"
+  status = 301
+
+[[redirects]]
+  from = "/home-schedule"
+  to = "/book-demo"
+  status = 301
+
+[[redirects]]
+  from = "/home-thank-you"
+  to = "/book-demo"
+  status = 301
+
+[[redirects]]
+  from = "/strategy-session"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/hydra-1k"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/franchise-schedule"
+  to = "/franchise"
+  status = 301
+
+[[redirects]]
+  from = "/apply-2"
+  to = "/book-demo"
+  status = 301
+
+[[redirects]]
+  from = "/home-test"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/top-influencer-research-tool"
+  to = "/tools/influencer-research-tool"
+  status = 301
+
+[[redirects]]
+  from = "/webinars"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/webinars/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/post/measuring-success-and-maximizing-roi-in-influencer-marketing"
+  to = "/blog/influencer-marketing-roi"
+  status = 301
+
+[[redirects]]
+  from = "/post/strategies-for-effective-influencer-marketing-and-future-trends"
+  to = "/blog/strategies-for-effective-influencer-marketing-and-future-trends"
+  status = 301
+
+[[redirects]]
+  from = "/post/championing-sustainable-development-goals"
+  to = "/blog/championing-sustainable-development-goals"
+  status = 301
+
+[[redirects]]
+  from = "/post/5-influencer-marketing-trends-you-cant-ignore-in-2025"
+  to = "/blog/influencer-marketing-trends-2025"
+  status = 301
+
+[[redirects]]
+  from = "/influencer-discovery-tools"
+  to = "/influencer-discovery-tool"
+  status = 301
+
+# PostHog reverse proxy - avoids ad blockers
+# Using /ingest path (not obvious names like /analytics or /posthog)
+# Static assets rule MUST come first (Netlify evaluates in order)
+[[redirects]]
+  from = "/ingest/static/*"
+  to = "https://eu-assets.i.posthog.com/static/:splat"
+  host = "eu-assets.i.posthog.com"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/ingest/*"
+  to = "https://eu.i.posthog.com/:splat"
+  host = "eu.i.posthog.com"
+  status = 200
+  force = true

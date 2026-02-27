@@ -1,0 +1,43 @@
+{
+  "name": "hypefy-landing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "storyblok-pull-components": "storyblok components pull --space 288919481284570",
+    "storyblok-generate-types": "storyblok types generate --space 288919481284570"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@next/third-parties": "^16.1.1",
+    "@storyblok/js": "^4.4.2",
+    "@storyblok/react": "^5.4.19",
+    "@tanstack/react-query": "^5.90.16",
+    "axios": "^1.13.2",
+    "clsx": "^2.1.1",
+    "email-validator-dns-provider-rules": "^2.0.0",
+    "intl-tel-input": "^25.14.1",
+    "next": "^16.0.7",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-hook-form": "^7.70.0",
+    "storyblok": "^4.10.0",
+    "storyblok-generate-ts": "^2.2.0",
+    "storyblok-js-client": "^7.2.0",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^16.0.7",
+    "prettier": "^3.8.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
